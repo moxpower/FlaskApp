@@ -12,9 +12,22 @@ def hello_world():
 @app.route('/index')
 def index():
     user = {'nickname':'moxpower'}
+    posts = [
+        {
+            'author': {'nickname':'John'},
+            'question': 'How many regression models exist in machine learning?',
+            'answer':'<a href=http://www6.in.tum.de/Main/TeachingWs2009MachineLearning>Check class</a>'
+        },
+        {
+            'author': {'nickname':'Susan'},
+            'question': 'How many lines of code in R do you need for a linear regression?',
+            'answer':'4?'
+        }
+    ]
     return render_template('index.html',
                            title='Home',
-                           user=user)
+                           user=user,
+                           posts=posts)
 
 if __name__ == '__main__':
     app.run()

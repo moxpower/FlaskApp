@@ -1,0 +1,16 @@
+<!--app.route('/index')-->
+
+ <html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - data mining station</title>
+    {% else %}
+        <title>Welcome to the data mining station</title>
+    {% endif %}
+    </head>
+    <body>
+        <div><a href="/index">QA log</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+ </html>
